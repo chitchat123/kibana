@@ -39,7 +39,7 @@ import { InternalApplicationStart } from '../../../application/types';
 import { HttpStart } from '../../../http';
 import { OnIsLockedUpdate } from './';
 import { createEuiListItem, createRecentNavLink, isModifiedOrPrevented } from './nav_link';
-
+import styling from '../../../../../styling.json';
 function getAllCategories(allCategorizedLinks: Record<string, ChromeNavLink[]>) {
   const allCategories = {} as Record<string, AppCategory | undefined>;
 
@@ -265,9 +265,7 @@ export function CollapsibleNav({
             <EuiCollapsibleNavGroup
               key={category.id}
               iconType={
-                category.euiIconType === 'logoKibana'
-                  ? 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg'
-                  : category.euiIconType
+                category.euiIconType === 'logoKibana' ? styling.menu_logo : category.euiIconType
               }
               title={category.label}
               isCollapsible={true}

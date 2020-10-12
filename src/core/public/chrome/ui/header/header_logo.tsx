@@ -24,7 +24,7 @@ import useObservable from 'react-use/lib/useObservable';
 import { Observable } from 'rxjs';
 import Url from 'url';
 import { ChromeNavLink } from '../..';
-
+import styling from '../../../../../styling.json';
 function findClosestAnchor(element: HTMLElement): HTMLAnchorElement | void {
   let current = element;
   while (current) {
@@ -99,14 +99,14 @@ export function HeaderLogo({ href, navigateToApp, ...observables }: Props) {
   return (
     <EuiHeaderLogo
       data-test-subj="logo"
-      iconType="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      iconType={styling.header_logo}
       onClick={(e) => onClick(e, forceNavigation, navLinks, navigateToApp)}
       href={href}
       aria-label={i18n.translate('core.ui.chrome.headerGlobalNav.goHomePageIconAriaLabel', {
         defaultMessage: 'Go to home page',
       })}
     >
-      Test project name
+      {styling.title}
     </EuiHeaderLogo>
   );
 }
