@@ -4,3 +4,23 @@
 @import './overlays/index';
 @import './rendering/index';
 @import './styles/index';
+
+$mainBgColor: #f1f1f1;
+$secondaryBgColor: #f2f2f2;
+$textColor: #007ea7;
+$linkColor: #15968d;
+
+.homWrapper{
+  background-color: $mainBgColor !important;
+}
+.kbnOverviewPageHeader{
+  background-color: $secondaryBgColor !important;
+}
+.euiTitle{
+  color: $textColor;
+}
+a {
+  color: $linkColor !important;
+}
+
+
